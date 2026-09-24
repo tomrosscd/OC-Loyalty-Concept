@@ -26,6 +26,16 @@
 .intro{position:absolute;top:23%;bottom:12%;left:20%;right:20%;z-index:7;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;color:#fff5ef;text-shadow:0 2px 12px #000}
 .eyebrow{font-size:11px;letter-spacing:.15em;line-height:1.7}.intro>.eyebrow{font-size:9px;letter-spacing:.12em}.hotel-logo{width:min(210px,85%);height:auto;filter:drop-shadow(0 0 8px #efa1bf55);margin:20px 0}.intro p{font-size:13px;line-height:1.7;margin:0 0 22px}.intro .desktop{display:none}.primary{border:1px solid #f4e8e0;background:#f4e8e0;color:#231014;min-height:46px;min-width:180px;padding:0 21px;display:flex;align-items:center;justify-content:space-between;gap:24px;font-size:12px;font-weight:600;letter-spacing:.08em;transition:background .2s}.primary:hover{background:#e8bdc5;border-color:#e8bdc5}.intro .primary{min-width:180px}.intro small{font-size:10px;line-height:1.6;margin:12px 0 3px}.text-button{background:none;border:0;border-bottom:1px solid #a99387;color:inherit;font-size:11px;letter-spacing:.07em;min-height:44px;padding:9px 0}.intro-footnote{display:none}
 .floor-indicator{position:absolute;top:12px;left:50%;transform:translateX(-50%);z-index:10;display:flex;align-items:center;gap:12px;white-space:nowrap;color:#e2c5a6}.floor-indicator b{font-size:14px;font-weight:500;letter-spacing:.12em}.floor-indicator>span:first-child{display:flex;align-items:center;justify-content:center;width:16px;height:16px}.indicator-dash{display:block;width:14px;height:1.4px;background:currentColor}.floor-indicator>span:last-child{font-size:10px;letter-spacing:.12em}.hotel:not(.entered) .floor-indicator{background:#110b0cbb;padding:8px 20px;top:9px}.hotel:not(.entered) .floor-indicator>span:last-child{display:none}
+/* Mobile lobby fills the height too, trimming only the side walls. */
+@media(max-width:900px){.hotel:not(.entered) .portal{height:100cqh;width:calc(100cqh * 848 / 1264);max-width:none;max-height:none;flex-shrink:0;aspect-ratio:auto}.intro{left:24%;right:24%}}
+/* Desktop lobby: landscape entrance, with the animated doors laid exactly over the painted opening (541-836 × 98-708 of 1376×768). */
+@media(min-width:901px){
+ /* Always full height; narrower screens trim the side walls rather than shrinking the lift. */
+ .hotel:not(.entered) .portal{height:100cqh;width:calc(100cqh * 1376 / 768);max-width:none;max-height:none;flex-shrink:0;aspect-ratio:auto;background-image:url('/assets/lift-entrance-desktop.webp')}
+ .hotel:not(.entered) .door{top:12.7%;height:79.5%;width:10.72%}
+ .hotel:not(.entered) .door.left{left:39.32%}.hotel:not(.entered) .door.right{right:39.24%}
+ .intro{left:39.5%;right:39.5%;top:15%;bottom:9%}.intro p{font-size:12px}
+}
 /* After check-in the frame stays fixed, with a wide room window and a separate suite plaque. */
 /* The room column is capped at the width the room can reach at this height (66 header + 24 top + 113 + 58 rows, 28 frame inset, 1376:768 image),
    so the room, tier copy and action bar share the same edges and sit centred with the floor rail. */
