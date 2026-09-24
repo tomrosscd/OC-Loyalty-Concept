@@ -15,5 +15,5 @@ export const tiers:Tier[]=[
 ];
 export const earn=[['Create an account','40 points'],['Every $1 spent','1 point at Suite & Deluxe'],['Sign up for SMS','30 points'],['Download the Outcast App','30 points'],['Tell us your birthday','Birthday voucher'],['Follow on Instagram','10 points'],['Follow on TikTok','10 points'],['Leave a review','Up to 60 points']];
 
+// Maximum ceiling crop (px of 1264) each mobile room tolerates when space is tight; hotspot mobileY is % of the full image.
 export const mobileCropTop = [160, 140, 80, 190];
-export const mobileY = (floor:number, y:number) => (y * 12.64 - mobileCropTop[floor]) / (1264 - mobileCropTop[floor]) * 100;
